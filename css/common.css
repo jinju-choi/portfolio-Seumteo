@@ -1,0 +1,60 @@
+@charset "utf-8";
+
+.hide {
+  display: none;
+}
+
+/* .mb80 {
+  margin-bottom: 80px;   
+} */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+span,
+address,
+p,
+time,
+strong,
+pre,
+button,
+input,
+label,
+legend {
+  font-family: 'Noto Sans KR', sans-serif;
+  font-weight: 300;
+}
+
+.inner {
+  margin: 0 auto;
+  width: 1200px;
+}
+
+span.block {
+  display: block;
+}
+
+span.indent {
+  text-indent: -9999px;
+}
+
+.current-coll {
+  height: 4px;
+  border-top: 2px solid yellow !important;
+  box-shadow: 1px -3px 5px rgba(250, 255, 82, 0.5);
+}
+
+.current-coll a {
+  color: yellow !important;
+  font-weight: 400;
+  text-shadow: 0 0 5px rgba(250, 255, 82, 0.5);
+}
+
+.clear_both::after {
+  content: "";
+  display: block;
+  clear: both;
+}

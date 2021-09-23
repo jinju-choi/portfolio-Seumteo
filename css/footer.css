@@ -1,0 +1,132 @@
+@charset "utf-8";
+
+/* 하단영역----------------------------------------- */
+footer {
+    background-color: #eeeeee;
+    overflow: hidden;
+    color: #333;
+    padding: 20px 0 60px;
+    position: relative;
+}
+
+footer ul {
+    float: left;
+    display: flex;
+    margin-bottom: 30px;
+}
+
+footer ul li {}
+
+footer ul li a {
+    padding: 0 10px;
+    line-height: 3;
+    display: block;
+    color: #6d6d6d;
+}
+
+footer ul li a:hover {
+    text-decoration: underline;
+}
+
+footer ul li:nth-child(2) a {
+    font-weight: 400;
+    color: #000;
+}
+
+footer ul+span {
+    float: right;
+    display: flex;
+    font-size: 15px;
+}
+
+footer ul+span a {
+    background-color: #fff;
+    display: block;
+    border: 1px solid #c8c8c8;
+    padding: 5px 12px;
+    line-height: 2;
+    margin-left: 5px;
+    color: #2e2e2e;
+}
+
+footer ul+span a:first-child {
+    color: #333;
+    font-weight: 400;
+    letter-spacing: -1px;
+}
+
+footer ul+span a:last-child {
+    color: #6d6d6d;
+    font-weight: 400;
+}
+
+footer ul+span a:last-child::after {
+    content: "↑";
+    margin-left: 10px;
+}
+
+footer ul+span a:last-child:hover {
+    color: #000;
+}
+
+footer h1 {
+    background-image: url(../img/banner_mltm.png);
+    clear: both;
+    float: left;
+    text-indent: -9999px;
+    width: 157px;
+    height: 37px;
+    background-size: 100%;
+    margin-right: 42px;
+    background-position: center;
+}
+
+footer address {
+    float: right;
+    color: #6d6d6d;
+    width: 83%;
+    text-align: left;
+    font-size: 0.937rem;
+    font-weight: 400;
+}
+
+footer address span {
+    float: right;
+    text-align: right;
+    line-height: 1.3;
+    color: #6d6d6d;
+    font-weight: 400;
+}
+
+footer address strong {
+    color: #1f82c2;
+    font-weight: 400;
+}
+
+footer address strong:first-child {
+    margin-right: 10px;
+}
+
+footer address strong:last-child {
+    color: #9a9a9a;
+    font-size: 0.875rem;
+}
+
+footer address+p {
+    float: right;
+    color: #6d6d6d;
+    font-size: 13px;
+    position: relative;
+    top: -17px;
+    font-weight: 400;
+    width: 83%;
+    text-align: left;
+}
+footer address+p+p {
+    position: absolute;
+    left: 10px;
+    bottom: 10px;
+}
+footer address+p+p img{
+    opacity: 0.5;
+}

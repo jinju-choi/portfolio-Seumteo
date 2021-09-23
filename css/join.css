@@ -1,0 +1,259 @@
+@charset "UTF-8";
+
+#join {
+  color: #333;
+  margin-top: 100px;
+}
+#join .inner {
+  padding: 70px 0;
+  width: 50% !important;
+  text-align: center;
+}
+#join h2 {
+  font-size: 30px;
+  display: inline-block;
+  margin-bottom: 30px;
+  font-weight: 500;
+}
+#join h2 span {
+  display: block;
+  font-size: 16px;
+  margin-top: 15px;
+  background-color: #0066cc;
+  color: #fff;
+  padding: 5px;
+  border-radius: 3px;
+}
+#join h2+p{
+  text-align: right;
+  margin-bottom: 40px;
+  font-size: 14px;
+}
+
+#join h2+p+p strong{
+  color: #0066cc;
+}
+#join form {
+  text-align: left;
+}
+#join fieldset {
+  
+}
+#join fieldset:first-child div {
+  padding: 30px 30px;
+  background-color: #f8fafd;
+  border: 2px solid #3ea6df;
+  overflow: hidden;
+  margin-top: 10px;
+}
+#join fieldset:first-child div input {
+  float: left;
+  margin-right: 10px;
+  margin-bottom: 25px;
+}
+#join fieldset:first-child div input:nth-of-type(2) {
+  clear: both;
+}
+#join fieldset:first-child div input:nth-of-type(3){
+  clear: both;
+  margin-bottom: 0;
+}
+#join fieldset:first-child div label{
+  float: left;
+  font-size: 18px;
+  font-weight: 400;
+}
+#join fieldset div label strong {
+  color: #f54948;
+  font-weight: 500;
+  margin-left: 5px;
+}
+#join fieldset:first-child div label:nth-of-type(3) strong{
+  color: #858585;
+}
+#join fieldset:nth-child(2) div {
+  background-color: #f8fafd;
+  margin: 30px 0 60px;
+  border: 1px solid #ccc;
+  padding: 40px 30px;
+}
+#join fieldset:nth-child(2) div label {
+  display: inline-block;
+  margin-bottom: 20px;
+  font-size: 20px;
+  font-weight: 500;
+}
+#join fieldset:nth-child(2) div label strong {
+
+}
+#join fieldset:nth-child(2) div textarea {
+  width: 100%;
+  padding: 30px;
+  box-sizing: border-box;
+  white-space: pre-line;
+  font-size: 14px;
+}
+
+/* join_list------------------------------------- */
+#join .join_list {
+
+}
+#join .join_list p {
+  line-height: 1.3;
+}
+
+#join .join_list fieldset {
+  padding: 5px 0 30px;
+  margin: 30px 0;
+  box-sizing: border-box;
+  border-bottom: 2px solid #333;
+  position: relative;
+}
+#join .join_list fieldset::before {
+  content: "";
+  width: 100%;
+  height: 2px;
+  background-color: #333;
+  display: block;
+  position: absolute;
+  top: -12px;
+  left: 0;
+}
+#join .join_list fieldset legend {
+  font-size: 25px;
+  display: block;
+  width: 100%;
+  padding-bottom: 30px;
+  font-weight: 500;
+}
+#join .join_list fieldset p:nth-of-type(1) {
+  color: #0066cc;
+}
+#join .join_list fieldset p:nth-of-type(2) {
+  margin-bottom: 20px;
+}
+#join .join_list fieldset legend strong {
+  color: #f54948;
+  font-weight: 500;
+}
+#join .join_list fieldset legend strong::after{
+  content: "*";
+}
+#join .join_list fieldset>span {
+  display: block;
+  margin: 0 auto 15px;
+  width: 75%;
+  overflow: hidden;
+}
+
+#join .join_list fieldset span label{
+  width: 30%;
+  display: block;
+  font-size: 18px;
+  font-weight: 400;
+  height: 50px;
+  float: left;
+  clear: both;
+  display: flex;
+  align-items: center;
+}
+#join .join_list fieldset span label::before {
+  content: "*";
+  color: #f54948;
+  margin: 0 5px;
+  vertical-align: -3px;
+}
+#join .join_list fieldset>span>input {
+  border: 1px solid #ccc;
+  height: 40px;
+  box-sizing: border-box;
+  width: 300px;
+  padding: 10px;
+  float: left;
+}
+#join .join_list fieldset>span>input:focus{
+  box-shadow: 1px 1px 5px rgba(7, 115, 255, 0.4) inset;
+border: 2px solid #6db6ff;
+}
+
+#join .join_list fieldset span button {
+  background-color: #ccc;
+  border: transparent;
+  width: 15%;
+  height: 40px;
+  font-size: 16px;
+  background-color: #d8ebff;
+  color: #333;
+  margin-left: 5px;
+}
+#join .join_list fieldset span button:hover{
+  background-color: #0066cc;
+  color: #fff;
+  font-weight: 400;
+}
+#join .join_list fieldset span span{
+  display: block;
+  text-align: center;
+  font-size: 14px;
+  line-height: 2;
+  float: left;
+}
+#join .join_list fieldset span:last-child span{
+  width: 300px;
+  text-align: left;
+}
+#join .join_list fieldset span:last-child span input{
+  margin: 10px;
+}
+#join .join_list fieldset span select{
+  display: inline-block;
+  width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  -moz-appearance: none;
+  background-image: url(../img/arrow_drop_down.png);
+  background-repeat: no-repeat;
+  background-position: 97%;
+  background-size: 10%;
+}
+
+#join .join_list p.dott {
+  margin: 3px 0;
+}
+#join .join_list p.dott::before {
+  content: "";
+  width: 3px;
+  height: 3px;
+  display: inline-block;
+  background-color: #333;
+  margin-right: 5px;
+  vertical-align: 4px;
+}
+#join .join_list p strong {
+  font-weight: 500;
+}
+#join form.btn {
+  text-align: center;
+  margin-top: 80px;
+}
+#join form.btn fieldset {
+
+}
+#join form.btn fieldset button {
+  height: 60px;
+  font-size: 18px;
+  margin: 0 5px;
+}
+#join form.btn fieldset button:first-child{
+  width: 120px;
+  background-color: transparent;
+  border: 1px solid #ccc;
+}
+#join form.btn fieldset button:last-child{
+  width: 170px;
+  border: transparent;
+  background-color: #0066cc;
+  color: #fff;
+  font-weight: 500;
+}
