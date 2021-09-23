@@ -10,6 +10,27 @@ $(window).scroll(function(){
   scrollArea (windowTop);
 });
 
+if($(window).width() > 1300 ) {
+  var $html = $("html");
+  var page = 1;
+
+  $html.css({"overflow": "hidden"});
+  $html.animate({scrollTop : 0},10);
+
+  $(window).on("wheel", function(e) {
+    if($html.is(":animated")) return;
+    if(e.originalEvent.deltaY > 0) {
+        if(page == 4) return;
+        page++;
+    } else if(e.originalEvent.deltaY < 0) {
+        if(page == 1) return;
+        page--;
+    }
+    var posTop = (page-1) * $(window).height();
+    $html.animate({scrollTop : posTop - 84}, 500);
+  });
+}
+
 
   //팝업창닫기
 function popUpClose() {

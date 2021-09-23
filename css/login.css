@@ -60,7 +60,7 @@
 }
 #login .id_login form fieldset input[type="checkbox"]{
   float: left;
-  width: 0;
+  width: inherit;
   display: inline-block;
   margin-right: 10px;
 }
