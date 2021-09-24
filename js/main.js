@@ -11,6 +11,10 @@ $(window).scroll(function(){
 });
 
 if($(window).width() > 1300 ) {
+  whillEvent();
+}
+
+function whillEvent() {
   var $html = $("html");
   var page = 1;
 
@@ -26,11 +30,10 @@ if($(window).width() > 1300 ) {
         if(page == 1) return;
         page--;
     }
-    var posTop = (page-1) * $(window).height();
-    $html.animate({scrollTop : posTop - 84}, 500);
+    var posTop = (page-1) * $(window).height() - $("header").height();
+    $html.animate({scrollTop : posTop}, 500);
   });
 }
-
 
   //팝업창닫기
 function popUpClose() {
