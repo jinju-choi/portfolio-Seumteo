@@ -14,17 +14,18 @@ if($(window).width() > 1300 ) {
   whillEvent();
 }
 
+var page;
+
 function whillEvent() {
   var $html = $("html");
-  var page = 1;
-
+  page = 1;
   $html.css({"overflow": "hidden"});
   $html.animate({scrollTop : 0},10);
 
   $(window).on("wheel", function(e) {
     if($html.is(":animated")) return;
     if(e.originalEvent.deltaY > 0) {
-        if(page == 4) return;
+        if(page == 5) return;
         page++;
     } else if(e.originalEvent.deltaY < 0) {
         if(page == 1) return;
@@ -32,6 +33,7 @@ function whillEvent() {
     }
     var posTop = (page-1) * $(window).height() - $("header").height();
     $html.animate({scrollTop : posTop}, 500);
+    console.log(posTop)
   });
 }
 
