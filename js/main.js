@@ -11,12 +11,12 @@ $(window).scroll(function(){
 });
 
 if($(window).width() > 1300 ) {
-  whillEvent();
+  wheelEvent();
 }
 
 var page;
 
-function whillEvent() {
+function wheelEvent() {
   var $html = $("html");
   page = 1;
   $html.css({"overflow": "hidden"});
