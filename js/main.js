@@ -14,30 +14,7 @@ if($(window).width() > 1300 ) {
   wheelEvent();
 }
 
-var page;
-
-function wheelEvent() {
-  var $html = $("html");
-  page = 1;
-  $html.css({"overflow": "hidden"});
-  $html.animate({scrollTop : 0},10);
-
-  $(window).on("wheel", function(e) {
-    if($html.is(":animated")) return;
-    if(e.originalEvent.deltaY > 0) {
-        if(page == 5) return;
-        page++;
-    } else if(e.originalEvent.deltaY < 0) {
-        if(page == 1) return;
-        page--;
-    }
-    var posTop = (page-1) * $(window).height() - $("header").height();
-    $html.animate({scrollTop : posTop}, 500);
-    console.log(posTop)
-  });
-}
-
-  //팝업창닫기
+//팝업창닫기
 function popUpClose() {
   $("div.popup_box").click(
     function(){
@@ -46,9 +23,38 @@ function popUpClose() {
   });
 }
 
+var page;
+var posTop;
+var now_page;
+var sec_length = $("section").length;
+
+function wheelEvent() {
+  var $html = $("html");
+  now_page = 0;
+  $html.css({"overflow": "hidden"});
+  $html.animate({scrollTop : 0},10);
+
+  $(window).on("wheel", function(e) {
+    if($html.is(":animated")) return;
+    if(e.originalEvent.deltaY > 0) {
+        if(now_page == sec_length - 1) {
+          $html.animate({scrollTop : $(window).height() * sec_length }, 500);
+          return;
+        } 
+        now_page++;
+    } else if(e.originalEvent.deltaY < 0) {
+        if(now_page == 0) return;
+        now_page--;
+    }
+    posTop = now_page * $(window).height();
+    $html.animate({scrollTop : posTop}, 500);
+    console.log('wheel now_page:'+now_page);
+  });
+}
+
+
 //퀵메뉴 클릭시 섹션영역 스크롤링
 var headerH = $("header").outerHeight();
-console.log(headerH)
 var complaints = $("#complaints");
 var architecture = $("#architecture");
 var collution = $("#collution");
@@ -60,11 +66,23 @@ function quickListCurrentScroll(){
   $("#quick ul.qlist1 li").first().addClass("active");
   $("#quick ul.qlist1 li").click(
   function(){
-    idx = $(this).index();
-    sectionTop = Math.floor(section[idx].offset().top) - headerH;
-    $("body,html").animate({scrollTop: sectionTop},500);
+    now_page = $(this).index();
+    sectionTop = Math.floor(section[now_page].offset().top) - headerH;
+    $("body,html").animate({scrollTop: sectionTop}, 500);
+    console.log('sectionTop:'+ sectionTop)
+    console.log('now_page:'+now_page)
   });
 }
+
+// function quickListCurrentScroll(){
+//   $("#quick ul.qlist1 li").first().addClass("active");
+//   $("#quick ul.qlist1 li").click(
+//   function(){
+//     sectionTop = Math.floor(section[currentPage].offset().top) - headerH;
+//     $("body,html").animate({scrollTop: sectionTop}, 500);
+//     console.log('currentPage:'+currentPage)
+//   });
+// }
 
 function scrollArea (winTop) {
   if(winTop >= section[0].offset().top - headerH){
@@ -99,9 +117,17 @@ function collutionSlide() {
   var auto = null;
   var $indecater = $("#collution div ul li");
   var $slide = $("#collution .slide");
+  var $nextBtn = $("#collution .next");
+  var $prevBtn = $("#collution .prev");
+  var scrollBar = $(window).outerWidth() - $(window).innerWidth();
 
   function init () {
-    slide_width = $("#collution .slide .slide_item").width();
+    if( $(window).width() > 1300){
+      slide_width = $("#collution .slide .slide_item").width() + scrollBar;
+    }
+    else if ($(window).width() < 1300) {
+      slide_width = $("#collution .slide .slide_item").width();
+    }
     now_num = $("#collution div ul li.active").index();
     slide_length = $indecater.length;
   }
@@ -113,11 +139,11 @@ function collutionSlide() {
     });
   }
 
-  $("#collution .prev").click(function () {
+  $prevBtn.click(function () {
     prevPlay();
   });
 
-  $("#collution .next").click(function () {
+  $nextBtn.click(function () {
     nextPlay();
   });
 
@@ -136,7 +162,7 @@ function collutionSlide() {
   }
 
   function autoPlayStop() {
-    $indecater.mouseenter(function() {
+    $indecater.mouseenter(function(){
       clearInterval(auto);
     });
   }
@@ -145,7 +171,7 @@ function collutionSlide() {
     $indecater.mouseleave(function(){
       auto = setInterval(function() {
         nextPlay();
-      }, 3000);
+      }, 4000);
     });
   }
 

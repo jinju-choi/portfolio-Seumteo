@@ -5,12 +5,10 @@
   --skyblue: #23c3ff;
   --navy: #2e3754;
 }
-main {
-  margin-top: 84px;
 
-}
 section {
   height: calc(100vh - 84px);
+  margin-top: 84px;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -622,7 +620,7 @@ section {
   display: block;
   position: absolute;
   top: 50%;
-  width: 80%;
+  width: 890px;
   left: 50%;
   transform: translateX(-50%);
   padding: 0 10px;
@@ -652,7 +650,7 @@ section {
   display: flex;
   justify-content: space-between;
   position: absolute;
-  bottom: 21%;
+  bottom: 10%;
   left: 50%;
   text-align: center;
   transform: translateX(-50%);
